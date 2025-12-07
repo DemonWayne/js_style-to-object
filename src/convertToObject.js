@@ -10,7 +10,7 @@ function convertToObject(sourceString) {
     .split(';')
     .filter((style) => style.trim());
 
-  const objectStyles = splittedStyles.reduce((acc, style) => {
+  const stylesMap = splittedStyles.reduce((acc, style) => {
     const [styleName, styleValue] = style.split(':').map((str) => str.trim());
 
     if (styleName && styleValue) {
@@ -20,7 +20,7 @@ function convertToObject(sourceString) {
     return acc;
   }, {});
 
-  return objectStyles;
+  return stylesMap;
 }
 
 module.exports = convertToObject;
